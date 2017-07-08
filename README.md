@@ -64,7 +64,7 @@ Write out the AJAX call that will grab the data and `console.log` the list of ea
 
 > **Pro-tip**: When in doubt, work in your Chrome Javascript Console! You can manipulate JSON, test your ideas, and even render elements to the page without ever touching your `app.js` file!
 
-**Switch to Template Literals**: We encourage you to use template liteals (with the `` ` ``). At a certain point it's easier to work with a *template* than to build HTML strings by hand.
+**Switch to Template Literals**: We encourage you to use template literals (with the `` ` ``). At a certain point it's easier to work with a *template* than to build HTML strings by hand.
 
 #### Part 3. Add Google Maps
 - Your next goal is to integrate Google Maps:
@@ -81,7 +81,7 @@ Write out the AJAX call that will grab the data and `console.log` the list of ea
 Once you've got the map to show up, your next goal is to drop a single pin on your city. This is a sanity check.  
 - Next, can you add only the first earthquake to the map?
 - Can you add pins for *all* the earthquakes to the map?
-- Finally, can you replace the pin with the `earthquake.png` icon? 
+- Finally, can you replace the pin with the `earthquake.png` icon?
 
 #### Bonus:
 Extend your template:  
