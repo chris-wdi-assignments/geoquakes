@@ -32,20 +32,42 @@ let onSuccess = function(results, status) {
 
 };
 
+function getTime (ms) {
+  let now = new Date(ms);
+  let year = now.getFullYear();
+  let month = now.getMonth() + 1;
+  if (month < 10) month = '0' + month;
+  let day = now.getDate();
+  if (day < 10) day = '0' + day;
+  console.log(year, month, day);
+  return `${year}-${month}-${day}`;
+}
+
+const endtime = getTime(Date.now());
+const starttime = getTime(Date.now() - 604800000);
+
 function getEarthquakeData() {
   $.ajax({
     method: "GET",
     url: action,
-    data: "format=geojson&starttime=2014-10-01&endtime=2015-01-02&minmagnitude=5",
-    success: onSuccess
-  })
+
+    data: {
+      format: "geojson",
+      endtime: getTime(endtime),
+      starttime: getTime(starttime),  // number of ms in a week
+      minmagnitude: 4
+    },
+
+    success: onSuccess,
+    //data: "format=geojson&starttime=2014-10-01&endtime=2015-01-02&minmagnitude=5"
+  });
 }
 
 $(document).ready(function() {
   console.log("Let's get coding!");
 
-  getEarthquakeData();
-
+  let x = getEarthquakeData();
+  console.log(x);
 
 })
 
